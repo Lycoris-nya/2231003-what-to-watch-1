@@ -23,7 +23,7 @@ function MovieInList(props: Props): JSX.Element {
     <button className="btn btn--list film-card__button" type="button" onClick={() => dispatch(fetchChangeFavoriteFilmsAction({filmId: props.film.id, status: Number(!filmStatus)}))}>
       <svg viewBox="0 0 19 20" width="19" height="20">
         {
-          filmStatus && authorizationStatus === AuthorizationStatus.Auth
+          filmStatus && authorizationStatus === AuthorizationStatus.Auth && favoriteFilms.length > 0
             ? <use xlinkHref="#in-list"/>
             : <use xlinkHref="#add"/>
         }
